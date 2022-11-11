@@ -34,7 +34,13 @@ public class Request {
     }
 
     public String getQueryParam(String name) {
-        return params.stream().filter(param -> param.getName().equals(name)).collect(Collectors.toList()).get(0).getValue();
+        var filteredParams = params.stream().filter(param -> param.getName().equals(name))
+            .collect(Collectors.toList());
+        if (filteredParams.isEmpty()) {
+            return "";
+        } else {
+            return filteredParams.get(0).getValue();
+        }
     }
     public List<NameValuePair> getQueryParams() {
         return params;
