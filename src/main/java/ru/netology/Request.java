@@ -33,8 +33,8 @@ public class Request {
         return path;
     }
 
-    public NameValuePair getQueryParam(String name) {
-        return params.stream().filter(param -> param.getName().equals(name)).collect(Collectors.toList()).get(0);
+    public String getQueryParam(String name) {
+        return params.stream().filter(param -> param.getName().equals(name)).collect(Collectors.toList()).get(0).getValue();
     }
     public List<NameValuePair> getQueryParams() {
         return params;

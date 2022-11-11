@@ -39,6 +39,7 @@ public class SocketProcessor {
 
         Request request = new Request().parse(parts);
 
+        logger.info("Param age = " + request.getQueryParam("age"));
         logger.info("Get params: " + request.getQueryParams());
 
         logger.info("Start processing request: " + request.getRequestMethod());
