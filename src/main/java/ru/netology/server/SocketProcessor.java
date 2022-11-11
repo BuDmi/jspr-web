@@ -39,6 +39,8 @@ public class SocketProcessor {
 
         Request request = new Request().parse(parts);
 
+        logger.info("Get params: " + request.getQueryParams());
+
         logger.info("Start processing request: " + request.getRequestMethod());
         if (!server.checkForProperlyEndpoint(request, out)) {
             socket.close();
